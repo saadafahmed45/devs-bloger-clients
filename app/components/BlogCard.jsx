@@ -1,4 +1,6 @@
 import React from "react";
+import { BiSolidBookmark } from "react-icons/bi";
+import { BsThreeDots } from "react-icons/bs";
 
 const BlogCard = ({ data }) => {
   const { id, title ,body} = data;
@@ -23,9 +25,9 @@ const BlogCard = ({ data }) => {
                       <span>10 min read </span>
                       </div>
 
-                      <div className="flex gap-4">
-                    <button> save </button>
-                    <button> Show </button>
+                      <div className="flex gap-4 text-3xl">
+                    <button className=""> <BiSolidBookmark /> </button>
+                    <button> <BsThreeDots /> </button>
                       </div>
           </div>
               </div>

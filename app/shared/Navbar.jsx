@@ -1,3 +1,5 @@
+"use client";
+import Link from "next/link";
 import React from "react";
 import { TfiWrite } from "react-icons/tfi";
 
@@ -6,7 +8,7 @@ const Navbar = () => {
     <div className='mx-4'>
       <div className='navbar bg-base-100 '>
         <div className='flex-1'>
-          <a className='btn btn-ghost text-xl'>Devs-Bloger</a>
+          <Link href={'/'} className='btn btn-ghost text-xl'>Devs-Bloger</Link>
           <div className='form-control'>
             <input
               type='text'
@@ -16,12 +18,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className='flex-none gap-2'>
-          <ul class='menu menu-horizontal px-1'>
+          <ul className='menu menu-horizontal px-1'>
             <li>
-              <a className='text-md'>
+              <Link href={'/addBlogPost'} className='text-md'>
                 <TfiWrite className='text-xl' />
                 Write
-              </a>
+              </Link>
             </li>
           </ul>
           <button className='btn btn-ghost btn-circle'>

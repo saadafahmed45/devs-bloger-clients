@@ -6,11 +6,13 @@ const BlogPost = async () => {
   const data = await blogApi();
   // console.log(data);
   return (
-    <div className=''>
+    <div className=' h-full '>
       {/* <h2>News{data.length}</h2> */}
-      {data.splice(1, 6).map((data) => (
+      <div className="flex md:flex-col item-center justify-center">
+          {data.splice(1, 6).map((data) => (
         <BlogCard key={data.id} data={data} />
       ))}
+    </div>
     </div>
   );
 };

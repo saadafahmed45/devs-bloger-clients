@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body className={inter.className} data-theme='light'>
         <Navbar />
-        <main className='mx-24'>{children}</main>
+        <div className=' px-24 py-8 container'>{children}</div>
         <Footer />
       </body>
     </html>

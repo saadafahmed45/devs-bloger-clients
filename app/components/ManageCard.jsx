@@ -4,6 +4,7 @@ import axios from "axios";
 import { BiSolidBookmark } from "react-icons/bi";
 import { MdDeleteOutline } from "react-icons/md";
 import { dynamicBlogApi } from "../api/dynamicBlogApi";
+import Swal from "sweetalert2";
 
 const ManageCard = () => {
   const [blog, setBlog] = useState([]);
@@ -28,6 +29,11 @@ const ManageCard = () => {
       .then((data) => {
         console.log(data);
         if (data.deletedCount > 0) {
+          Swal.fire({
+            title: "Deleted!",
+            text: "You blog is Deleted!",
+            icon: "danger",
+          });
           location.reload();
         }
       });

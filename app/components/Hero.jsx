@@ -2,35 +2,28 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className='text-gray-600 body-font'>
-      <div className='container mx-auto flex px-5 py-24 items-center justify-center flex-col'>
-        <img
-          className='lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded'
-          alt='hero'
-          src='https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg'
-        />
-        <div className='text-center lg:w-2/3 w-full'>
-          <h1 className='title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900'>
-            Microdosing synth tattooed vexillologist
+    <div
+      className='hero h-[60vh]  md:h-[80vh] lg:h-[90vh] '
+      style={{
+        backgroundImage:
+          "url(https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg)",
+      }}>
+      <div className='hero-overlay bg-opacity-60'></div>
+      <div className='hero-content text-center text-neutral-content'>
+        <div className='max-w-4xl'>
+          <h1 className='mb-5 text-3xl md:text-5xl font-bold'>
+            Exploring the World of Code: Tips, Tutorials, and Insights for
+            Developers{" "}
           </h1>
-          <p className='mb-8 leading-relaxed'>
-            Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing
-            tousled. Chambray dreamcatcher trust fund, kitsch vice godard
-            disrupt ramps hexagon mustache umami snackwave tilde chillwave ugh.
-            Pour-over meditation PBR&B pickled ennui celiac mlkshk freegan photo
-            booth af fingerstache pitchfork.
+          <p className='mb-5 text-md'>
+            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
+            a id nisi.
           </p>
-          <div className='flex justify-center'>
-            <button className='inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg'>
-              Button
-            </button>
-            <button className='ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg'>
-              Button
-            </button>
-          </div>
+          <button className='btn btn-primary'>Get Started</button>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -3,29 +3,34 @@ import { BiSolidBookmark } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
 
 const BlogCard = ({ data }) => {
-  const { id, title ,body} = data;
+  const { _id, title, description, imageLink, category, hashtag, author } =
+    data;
 
   return (
-    <div className='border-b-2 border-inherit shadow-lg	shadow-slate-200 m-8  '>
+    <div className='border-b-2 border-inherit shadow-lg	shadow-slate-200 m-2  md:m-8  hover:shadow-slate-300  hover:shadow-xl cursor-pointer'>
       {/* card warper */}
-      <div className='flex justify-between p-8 items-center '>
+      <div className=' flex justify-between flex-col md:flex-row p-2 items-center '>
         {/* blog content box     */}
-        <div className='w-[60%]  '>
+        <div className='w-[100%] md:w-[60%] flex flex-col  order-2 '>
           {/* user info */}
-          <div className='flex gap-4'>
-            <h4 className='text-sm'>Julien Etienne Julien Etienne</h4>
-            <span className='text-slate-500'>Dec 22, 2023</span>
+          <div className='flex flex-col md:flex-row gap-4 '>
+            <h4 className='text-sm md:text-md'>
+              Julien Etienne Julien Etienne
+            </h4>
+            <span className='text-sm md:text-md text-slate-500'>
+              Dec 22, 2023
+            </span>
           </div>
-          <h2 className='text-xl font-semibold my-2'>{title}</h2>
-          <p>{body}</p>
+          <h2 className='text-lg  font-semibold my-2'>{title}</h2>
+          <p className='text-sm md:text-md'>{description}</p>
           {/* card tagg  */}
-          <div className='mt-14 flex justify-between gap-4'>
-            <div className='flex gap-4'>
-              <h3>Programming </h3>
+          <div className=' mt-8 md:mt-14 flex justify-between gap-4 flex-col md:flex-row'>
+            <div className='flex gap-4 text-sm md:text-md p-1'>
+              <h3 className='bg-orange-100  rounded-lg '>{hashtag} </h3>
               <span>10 min read </span>
             </div>
 
-            <div className='flex gap-4 text-3xl'>
+            <div className='flex gap-4 justify-between text-3xl  '>
               <button className=''>
                 {" "}
                 <BiSolidBookmark />{" "}
@@ -39,7 +44,7 @@ const BlogCard = ({ data }) => {
         </div>
 
         {/* blog image     */}
-        <div className='w-1/2'>
+        <div className='order-1  w-full md:w-1/2 '>
           <img
             src='https://miro.medium.com/v2/resize:fit:1100/format:webp/0*8PuClELl1cRbarRH.png'
             alt=''

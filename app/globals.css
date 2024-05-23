@@ -2,4 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 
+@layer base {
+  h1 {
+    @apply  text-3xl md:text-5xl lg:text-7xl;
+  }
+  h2 {
+    @apply text-xl md:text-3xl lg:text-5xl;
+  }
+   h3 {
+    @apply text-lg md:text-2xl lg:text-3xl;
+  }
+  p {
+    @apply  text-sm md:text-2xl lg:text-3xl;
+  }
+} */
 
+/* @layer utilities{
+  p {
+    @apply  text-sm md:text-md lg:text-lg;
+  }
+} */

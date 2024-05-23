@@ -1,11 +1,9 @@
 // const blogApi = fetch("https://jsonplaceholder.typicode.com/posts");
 
 async function blogApi() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
-    cache: "force-cache",
+  const res = await fetch("http://localhost:7000/blog", {
+    cache: "no-store",
   });
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary

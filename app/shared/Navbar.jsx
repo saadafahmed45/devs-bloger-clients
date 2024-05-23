@@ -8,7 +8,9 @@ const Navbar = () => {
     <div className='mx-4'>
       <div className='navbar bg-base-100 '>
         <div className='flex-1'>
-          <Link href={'/'} className='btn btn-ghost text-xl'>Devs-Bloger</Link>
+          <Link href={"/"} className='btn btn-ghost text-xl'>
+            Devs-Bloger
+          </Link>
           <div className='form-control'>
             <input
               type='text'
@@ -20,7 +22,7 @@ const Navbar = () => {
         <div className='flex-none gap-2'>
           <ul className='menu menu-horizontal px-1'>
             <li>
-              <Link href={'/addBlogPost'} className='text-md'>
+              <Link href={"/addBlogPost"} className='text-md'>
                 <TfiWrite className='text-xl' />
                 Write
               </Link>
@@ -60,13 +62,10 @@ const Navbar = () => {
               tabIndex={0}
               className='mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52'>
               <li>
-                <a className='justify-between'>
-                  Profile
-                  <span className='badge'>New</span>
-                </a>
+                <Link href={"/profile"}>Profile</Link>
               </li>
               <li>
-                <a>Settings</a>
+                <Link href={"/dashboard"}>Dashboard</Link>
               </li>
               <li>
                 <a>Logout</a>

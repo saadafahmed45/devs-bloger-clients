@@ -3,12 +3,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BiSolidBookmark } from "react-icons/bi";
 import { MdDeleteOutline } from "react-icons/md";
+import { dynamicBlogApi } from "../api/dynamicBlogApi";
 
 const ManageCard = () => {
   const [blog, setBlog] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:7000/blog")
+    fetch(dynamicBlogApi)
       .then((res) => res.json())
       .then((data) => setBlog(data));
   }, []);
@@ -20,7 +21,7 @@ const ManageCard = () => {
   const handleDelete = (_id) => {
     console.log("dlt", _id);
 
-    fetch(`http://localhost:7000/blog/${_id}`, {
+    fetch(`https://devs-bloger-server.onrender.com/blog/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

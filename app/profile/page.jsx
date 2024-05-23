@@ -12,7 +12,7 @@ const Profile = () => {
     <div className='min-h-screen '>
       <div className='container px-16 py-16'>
         {/* warper */}
-        <div className='flex justify-between bg-slate-100 p-4'>
+        <div className='flex justify-between  p-4'>
           {/* left manage  */}
           <div>
             <ManageBlogCard />

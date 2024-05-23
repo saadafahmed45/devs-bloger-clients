@@ -3,8 +3,16 @@ import { BiSolidBookmark } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
 
 const BlogCard = ({ data }) => {
-  const { _id, title, description, imageLink, category, hashtag, author } =
-    data;
+  const {
+    _id,
+    title,
+    description,
+    imageLink,
+    category,
+    hashtag,
+    author,
+    createdAt,
+  } = data;
 
   return (
     <div className='border-b-2 border-inherit shadow-lg	shadow-slate-200 m-2  md:m-8  hover:shadow-slate-300  hover:shadow-xl cursor-pointer'>
@@ -18,7 +26,7 @@ const BlogCard = ({ data }) => {
               Julien Etienne Julien Etienne
             </h4>
             <span className='text-sm md:text-md text-slate-500'>
-              Dec 22, 2023
+              {createdAt}
             </span>
           </div>
           <h2 className='text-lg  font-semibold my-2'>{title}</h2>

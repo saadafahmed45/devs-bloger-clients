@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import { dynamicBlogApi } from "../api/dynamicBlogApi";
 
 const AddBlogPost = () => {
   // state manegmant
@@ -11,6 +12,12 @@ const AddBlogPost = () => {
     category: "",
     hashtag: "",
     author: "",
+    createdAt: new Date().toLocaleDateString("en-us", {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    }),
     // Add more fields as needed
   });
 
@@ -29,7 +36,7 @@ const AddBlogPost = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:7000/blog", {
+      const response = await fetch(dynamicBlogApi, {
         // mode: "no-cors",
         method: "POST",
         headers: {

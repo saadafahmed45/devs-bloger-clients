@@ -5,6 +5,8 @@ import { BiSolidBookmark } from "react-icons/bi";
 import { MdDeleteOutline } from "react-icons/md";
 import { dynamicBlogApi } from "../api/dynamicBlogApi";
 import Swal from "sweetalert2";
+import Link from "next/link";
+import { FaEdit } from "react-icons/fa";
 
 const ManageCard = () => {
   const [blog, setBlog] = useState([]);
@@ -30,11 +32,25 @@ const ManageCard = () => {
         console.log(data);
         if (data.deletedCount > 0) {
           Swal.fire({
-            title: "Deleted!",
-            text: "You blog is Deleted!",
-            icon: "danger",
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+            }
           });
-          location.reload();
+          setTimeout(function () {
+            location.reload(1);
+          }, 3000);
         }
       });
   };
@@ -43,7 +59,9 @@ const ManageCard = () => {
     <div className='w-[70%]'>
       {blog.map(
         ({ _id, title, description, imageLink, category, hashtag, author }) => (
-          <div className='border-b-2 border-inherit shadow-lg	shadow-slate-200 m-2  md:m-8  hover:shadow-slate-300  hover:shadow-xl cursor-pointer'>
+          <div
+            key={_id}
+            className='border-b-2 border-inherit shadow-lg	shadow-slate-200 m-2  md:m-8  hover:shadow-slate-300  hover:shadow-xl cursor-pointer'>
             {/* card warper */}
             <div className=' flex justify-between flex-col md:flex-row p-2 items-center '>
               {/* blog content box     */}
@@ -67,14 +85,19 @@ const ManageCard = () => {
                   </div>
 
                   <div className='flex gap-4 justify-between text-3xl  '>
-                    <button className=''>
-                      {" "}
-                      <BiSolidBookmark />{" "}
-                    </button>
-                    <button onClick={() => handleDelete(_id)}>
-                      {" "}
-                      <MdDeleteOutline />{" "}
-                    </button>
+                    <div className='tooltip' data-tip='Update'>
+                      <Link href={`profile/${_id}`} className=''>
+                        {" "}
+                        <FaEdit />{" "}
+                      </Link>
+                    </div>
+
+                    <div className='tooltip' data-tip='Delete'>
+                      <button onClick={() => handleDelete(_id)}>
+                        {" "}
+                        <MdDeleteOutline />{" "}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

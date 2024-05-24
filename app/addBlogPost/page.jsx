@@ -55,7 +55,9 @@ const AddBlogPost = () => {
       icon: "success",
     });
     // formData.reset();
-    location.reload();
+    setTimeout(function () {
+      location.reload(1);
+    }, 3000);
   };
 
   return (

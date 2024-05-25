@@ -56,7 +56,12 @@ const BlogUpdate = ({ params }) => {
     const category = form.category.value;
     const author = form.author.value;
     const hashtag = form.hashtag.value;
-
+    const createdAt = new Date().toLocaleDateString("en-us", {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
     const updateBlog = {
       title,
       description,
@@ -64,6 +69,7 @@ const BlogUpdate = ({ params }) => {
       category,
       author,
       hashtag,
+      createdAt,
     };
 
     // console.log(updateBlog);

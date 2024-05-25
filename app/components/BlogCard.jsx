@@ -25,9 +25,7 @@ const BlogCard = ({ data }) => {
         <div className='w-[100%] md:w-[60%] flex flex-col  order-2 '>
           {/* user info */}
           <div className='flex flex-col md:flex-row gap-4 '>
-            <h4 className='text-sm md:text-md'>
-              Julien Etienne Julien Etienne
-            </h4>
+            <h4 className='text-sm md:text-md'>{author}</h4>
             <span className='text-sm md:text-md text-slate-500'>
               {createdAt}
             </span>

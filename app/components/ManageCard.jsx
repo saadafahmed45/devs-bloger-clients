@@ -56,7 +56,7 @@ const ManageCard = () => {
   };
 
   return (
-    <div className='w-[70%]'>
+    <div className=''>
       {blog.map(
         ({ _id, title, description, imageLink, category, hashtag, author }) => (
           <div
@@ -104,10 +104,7 @@ const ManageCard = () => {
 
               {/* blog image     */}
               <div className='order-1  w-full md:w-1/3 '>
-                <img
-                  src='https://miro.medium.com/v2/resize:fit:1100/format:webp/0*8PuClELl1cRbarRH.png'
-                  alt=''
-                />
+                <img src={imageLink} alt={imageLink} />
               </div>
             </div>
           </div>

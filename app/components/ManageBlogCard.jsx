@@ -6,25 +6,13 @@ const ManageBlogCard = () => {
     <div>
       <div>
         {/* manage header */}
-        <div className='mb-16'>
-          <h1 className='text-4xl'>Mohammad Haolader</h1>
+        <div>
+          <h1 className='text-xl md:text-4xl'> Manage Blogs</h1>
+          {/* <h1 className='text-md md:text-2xl'> Mohammad Haolader</h1>
+          <p className='text-sm md:text-xl'> mohammaghaolader1@gmail.com</p> */}
         </div>
         {/* magane tab */}
         <div>
-          {/* manag btn */}
-          <div>
-            <ul className='menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box'>
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Item 2</a>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
-            </ul>
-          </div>
           {/* card      */}
           <ManageCard />
         </div>

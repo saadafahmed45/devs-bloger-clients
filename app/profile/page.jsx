@@ -9,10 +9,10 @@ const Profile = () => {
   };
 
   return (
-    <div className='min-h-screen '>
-      <div className='container px-16 py-16'>
+    <div className=' '>
+      <div className='container px-16'>
         {/* warper */}
-        <div className='flex justify-between  p-4'>
+        <div className=' '>
           {/* left manage  */}
           <div>
             <ManageBlogCard />

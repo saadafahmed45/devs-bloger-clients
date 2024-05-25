@@ -56,9 +56,15 @@ const BlogUpdate = ({ params }) => {
     const category = form.category.value;
     const author = form.author.value;
     const hashtag = form.hashtag.value;
- 
 
-    const updateBlog = { title, description };
+    const updateBlog = {
+      title,
+      description,
+      imageLink,
+      category,
+      author,
+      hashtag,
+    };
 
     // console.log(updateBlog);
 
@@ -210,7 +216,7 @@ const BlogUpdate = ({ params }) => {
                   <button
                     type='submit'
                     className='flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg'>
-                    Add Blog
+                    update your blog
                   </button>
                 </div>
               </div>

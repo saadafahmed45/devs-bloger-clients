@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { BiSolidBookmark } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
@@ -15,7 +16,9 @@ const BlogCard = ({ data }) => {
   } = data;
 
   return (
-    <div className='border-b-2 border-inherit shadow-lg	shadow-slate-200 m-2  md:m-8  hover:shadow-slate-300  hover:shadow-xl cursor-pointer'>
+    <Link
+      href={`blog/${_id}`}
+      className='border-b-2 border-inherit shadow-lg	shadow-slate-200 m-2  md:m-8  hover:shadow-slate-300  hover:shadow-xl cursor-pointer rounded-md'>
       {/* card warper */}
       <div className=' flex justify-between flex-col md:flex-row p-2 items-center '>
         {/* blog content box     */}
@@ -52,14 +55,11 @@ const BlogCard = ({ data }) => {
         </div>
 
         {/* blog image     */}
-        <div className='order-1  w-full md:w-1/2 '>
-          <img
-            src='https://miro.medium.com/v2/resize:fit:1100/format:webp/0*8PuClELl1cRbarRH.png'
-            alt=''
-          />
+        <div className='order-1  w-full md:w-1/2  p-4 '>
+          <img className='rounded' src={imageLink} alt='' />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

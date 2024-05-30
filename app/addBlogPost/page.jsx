@@ -98,7 +98,7 @@ const AddBlogPost = () => {
                     </label>
                     <textarea
                       onChange={handleChange}
-                      type='email'
+                      type='text'
                       id='description'
                       name='description'
                       placeholder='type your Descriptipon'

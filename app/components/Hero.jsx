@@ -1,6 +1,9 @@
-import React from "react";
+"use client";
+import React, { useContext, useState } from "react";
+import { Context } from "../Context/Context";
 
 const Hero = () => {
+  const { googleSingIn } = useContext(Context);
   return (
     <div
       className='hero h-[60vh]  md:h-[80vh] lg:h-[90vh]  bg-fixed	'
@@ -20,7 +23,9 @@ const Hero = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button className='btn btn-primary'>Get Started</button>
+          <button className='btn btn-primary ' onClick={googleSingIn}>
+            Login
+          </button>
         </div>
       </div>
     </div>

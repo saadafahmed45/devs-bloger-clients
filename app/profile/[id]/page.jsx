@@ -140,7 +140,7 @@ const BlogUpdate = ({ params }) => {
                     </label>
                     <textarea
                       // onChange={handleChange}
-                      type='email'
+                      type='text'
                       id='description'
                       name='description'
                       defaultValue={description}

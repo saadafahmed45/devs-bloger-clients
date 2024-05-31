@@ -1,9 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { dynamicBlogApi } from "../api/dynamicBlogApi";
+import { Context } from "../Context/Context";
 
 const AddBlogPost = () => {
+  const { googleSingIn, user } = useContext(Context);
+
   // state manegmant
   const [formData, setFormData] = useState({
     title: "",
@@ -11,7 +14,9 @@ const AddBlogPost = () => {
     imageLink: "",
     category: "",
     hashtag: "",
-    author: "",
+    author: user.displayName,
+    authorEmail: user.email,
+    authorPhoto: user.photoURL,
     createdAt: new Date().toLocaleDateString("en-us", {
       weekday: "long",
       year: "numeric",
@@ -132,7 +137,7 @@ const AddBlogPost = () => {
                       type='text'
                       id='author'
                       name='author'
-                      placeholder='type your author'
+                      placeholder={user.displayName}
                       className='w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
                     />
                   </div>

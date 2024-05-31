@@ -5,8 +5,17 @@ const SingleBlog = ({ params }) => {
   const id = params.id;
   // state manegmant
   const [blog, setBlog] = useState([]);
-  const { _id, title, description, imageLink, category, hashtag, author } =
-    blog;
+  const {
+    _id,
+    title,
+    description,
+    imageLink,
+    category,
+    hashtag,
+    author,
+    authorPhoto,
+    authorEmail,
+  } = blog;
 
   useEffect(() => {
     fetch(`https://devs-bloger-server.onrender.com/blog/${id}`)
@@ -32,11 +41,11 @@ const SingleBlog = ({ params }) => {
           <div className='flex gap-8 mt-4 '>
             <div className='avatar'>
               <div className='w-12 rounded-full'>
-                <img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
+                <img src={authorPhoto} />
               </div>
             </div>
             <div>
-              <h4 className='text-md'>Lars Wiik</h4>
+              <h4 className='text-md'>{author}</h4>
               <h4 className='text-slate-600 text-sm'>5 min Read </h4>
             </div>
             <div>

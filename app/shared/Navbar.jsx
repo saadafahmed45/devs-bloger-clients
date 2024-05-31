@@ -1,9 +1,12 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import { TfiWrite } from "react-icons/tfi";
+import { Context } from "../Context/Context";
 
 const Navbar = () => {
+  const { googleSingIn, user } = useContext(Context);
+
   return (
     <div className='mx-1  md:mx-4 '>
       <div className='navbar bg-base-100 '>
@@ -52,10 +55,7 @@ const Navbar = () => {
               role='button'
               className='btn btn-ghost btn-circle avatar'>
               <div className='w-10 rounded-full'>
-                <img
-                  alt='Tailwind CSS Navbar component'
-                  src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
-                />
+                <img alt='Tailwind CSS Navbar component' src={user.photoURL} />
               </div>
             </div>
             <ul

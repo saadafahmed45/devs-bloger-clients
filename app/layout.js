@@ -15,13 +15,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={inter.className} data-theme='light'>
-        <ContextProvider>
+      <ContextProvider>
+        <body className={inter.className} data-theme='light'>
           <Navbar />
           <div className=''>{children}</div>
           <Footer />
-        </ContextProvider>
-      </body>
+        </body>
+      </ContextProvider>
     </html>
   );
 }

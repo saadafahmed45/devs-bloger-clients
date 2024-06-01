@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { BiSolidBookmark } from "react-icons/bi";
 import { MdDeleteOutline } from "react-icons/md";
@@ -7,17 +7,31 @@ import { dynamicBlogApi } from "../api/dynamicBlogApi";
 import Swal from "sweetalert2";
 import Link from "next/link";
 import { FaEdit } from "react-icons/fa";
+import { Context } from "../Context/Context";
 
 const ManageCard = () => {
+  const { googleSingIn, user } = useContext(Context);
+
   const [blog, setBlog] = useState([]);
 
   useEffect(() => {
     fetch(dynamicBlogApi)
       .then((res) => res.json())
-      .then((data) => setBlog(data));
+      .then((data) => {
+        setBlog(data);
+      });
   }, []);
 
-  console.log(blog);
+  // const [userFilter, setUserFilter] = useState("");
+
+  // useEffect(() => {
+  //   setUserFilter(user.email);
+  // }, []);
+  // console.log(userFilter);
+
+  const filteredItems = blog?.filter((item) => item.authorEmail === user.email);
+
+  // console.log(blog);
 
   // delete product
 
@@ -57,7 +71,9 @@ const ManageCard = () => {
 
   return (
     <div className=''>
-      {blog.map(
+      {/* <h2>hello {userFilter}</h2> */}
+
+      {filteredItems.map(
         ({ _id, title, description, imageLink, category, hashtag, author }) => (
           <div
             key={_id}

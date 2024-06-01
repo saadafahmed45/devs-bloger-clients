@@ -5,7 +5,7 @@ import { TfiWrite } from "react-icons/tfi";
 import { Context } from "../Context/Context";
 
 const Navbar = () => {
-  const { googleSingIn, user } = useContext(Context);
+  const { googleSingIn, handleSingOut ,user } = useContext(Context);
 
   return (
     <div className='mx-1  md:mx-4 '>
@@ -49,29 +49,39 @@ const Navbar = () => {
               {/* <span className='badge badge-xs badge-primary indicator-item'></span> */}
             </div>
           </button>
-          <div className='dropdown dropdown-end'>
-            <div
-              tabIndex={0}
-              role='button'
-              className='btn btn-ghost btn-circle avatar'>
-              <div className='w-10 rounded-full'>
-                <img alt='Tailwind CSS Navbar component' src={user.photoURL} />
+          {user.emailVerified === true ? (
+            <div className='dropdown dropdown-end'>
+              <div
+                tabIndex={0}
+                role='button'
+                className='btn btn-ghost btn-circle avatar'>
+                <div className='w-10 rounded-full'>
+                  <img
+                    alt='Tailwind CSS Navbar component'
+                    src={user.photoURL}
+                  />
+                </div>
               </div>
+
+              <ul
+                tabIndex={0}
+                className='mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52'>
+                <li>
+                  <Link href={"/profile"}>Profile</Link>
+                </li>
+                <li>
+                  <Link href={"/dashboard"}>Dashboard</Link>
+                </li>
+                <li>
+                  <button onClick={ handleSingOut}>Logout</button>
+                </li>
+              </ul>
             </div>
-            <ul
-              tabIndex={0}
-              className='mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52'>
-              <li>
-                <Link href={"/profile"}>Profile</Link>
-              </li>
-              <li>
-                <Link href={"/dashboard"}>Dashboard</Link>
-              </li>
-              <li>
-                <a>Logout</a>
-              </li>
-            </ul>
-          </div>
+          ) : (
+            <Link href={"/login"} className='text-md'>
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>

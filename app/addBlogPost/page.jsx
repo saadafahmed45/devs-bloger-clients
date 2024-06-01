@@ -3,10 +3,16 @@ import React, { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { dynamicBlogApi } from "../api/dynamicBlogApi";
 import { Context } from "../Context/Context";
+import { redirect } from "next/navigation";
 
 const AddBlogPost = () => {
   const { googleSingIn, user } = useContext(Context);
 
+  // protect route Auth system
+  const myUser = user.emailVerified;
+  if (!myUser) {
+    redirect("/login");
+  }
   // state manegmant
   const [formData, setFormData] = useState({
     title: "",

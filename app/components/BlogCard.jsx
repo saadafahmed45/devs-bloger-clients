@@ -16,13 +16,11 @@ const BlogCard = ({ data }) => {
   } = data;
 
   return (
-    <Link
-      href={`blog/${_id}`}
-      className='border-b-2 border-inherit shadow-lg	shadow-slate-200 m-2  md:m-8  hover:shadow-slate-300  hover:shadow-xl cursor-pointer rounded-md'>
+    <div className='border-b-2 border-inherit shadow-lg	shadow-slate-200 m-2 p-2  md:m-8  hover:shadow-slate-300  hover:shadow-xl  rounded-md'>
       {/* card warper */}
       <div className=' flex justify-between flex-col md:flex-row p-2 items-center '>
         {/* blog content box     */}
-        <div className='w-[100%] md:w-[60%] flex flex-col  order-2 '>
+        <div className='w-[100%] md:w-[60%] flex flex-col  order-1 '>
           {/* user info */}
           <div className='flex flex-col md:flex-row gap-4 '>
             <h4 className='text-sm md:text-md'>{author}</h4>
@@ -51,13 +49,13 @@ const BlogCard = ({ data }) => {
             </div>
           </div>
         </div>
-
         {/* blog image     */}
-        <div className='order-1  w-full md:w-1/2  p-4 '>
+
+        <Link href={`blog/${_id}`} className='order-1  w-full md:w-1/3  p-2 '>
           <img className='rounded' src={imageLink} alt='' />
-        </div>
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 };
 

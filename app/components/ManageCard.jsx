@@ -22,13 +22,6 @@ const ManageCard = () => {
       });
   }, []);
 
-  // const [userFilter, setUserFilter] = useState("");
-
-  // useEffect(() => {
-  //   setUserFilter(user.email);
-  // }, []);
-  // console.log(userFilter);
-
   const filteredItems = blog?.filter((item) => item.authorEmail === user.email);
 
   // console.log(blog);
@@ -83,14 +76,7 @@ const ManageCard = () => {
               {/* blog content box     */}
               <div className='w-[100%] md:w-[60%] flex flex-col  order-2 '>
                 {/* user info */}
-                {/* <div className='flex flex-col md:flex-row gap-4 '>
-                  <h4 className='text-sm md:text-md'>
-                    Julien Etienne Julien Etienne
-                  </h4>
-                  <span className='text-sm md:text-md text-slate-500'>
-                    Dec 22, 2023
-                  </span>
-                </div> */}
+
                 <h2 className='text-lg  font-semibold my-2'>{title}</h2>
                 <p className='text-sm md:text-md'>{description}</p>
                 {/* card tagg  */}

@@ -3,30 +3,38 @@ import React, { useContext, useState } from "react";
 import { Context } from "../Context/Context";
 import ManageBlogCard from "../components/ManageBlogCard";
 import ProfileDetails from "../components/ProfileDetails";
-import { redirect } from "next/navigation";
+import Link from "next/link";
+// import { redirect } from "next/navigation";
 
 const Profile = () => {
   const { googleSingIn, handleSingOut, user } = useContext(Context);
 
   // protect route Auth system
-  const myUser = user.emailVerified;
-  if (!myUser) {
-    redirect("/login");
-  }
+  // const myUser = user.emailVerified;
+  // if (!myUser) {
+  //   redirect("/login");
+  // }
   return (
-    <div className=' '>
-      <div className='container px-16'>
+    <div className='h-screen '>
+      <div className='container px-16 text-center'>
         {/* warper */}
-        <div className='flex '>
-          {/* left manage  */}
-          <div>
-            <ManageBlogCard />
+        {user.emailVerified === true ? (
+          <div className='flex '>
+            {/* left manage  */}
+            <div>
+              <ManageBlogCard />
+            </div>
+            {/* right profile  */}
+            <div>
+              <ProfileDetails />
+            </div>
           </div>
-          {/* right profile  */}
-          <div>
-            <ProfileDetails />
-          </div>
-        </div>
+        ) : (
+          <Link className='text-blue-800' href={"/login"}>
+            {" "}
+            please Login in at frist
+          </Link>
+        )}
       </div>
     </div>
   );

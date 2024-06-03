@@ -31,9 +31,12 @@ const ManageCard = () => {
   const handleDelete = (_id) => {
     console.log("dlt", _id);
 
-    fetch(`https://devs-bloger-server.onrender.com/blog/${_id}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://devs-bloger-server-git-main-saadafahmed45s-projects.vercel.app/blog/${_id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

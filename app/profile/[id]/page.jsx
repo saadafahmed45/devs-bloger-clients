@@ -12,38 +12,12 @@ const BlogUpdate = ({ params }) => {
     blog;
 
   useEffect(() => {
-    fetch(`https://devs-bloger-server.onrender.com/blog/${id}`)
+    fetch(
+      `https://devs-bloger-server-git-main-saadafahmed45s-projects.vercel.app/blog/${id}`
+    )
       .then((res) => res.json())
       .then((data) => setBlog(data));
   }, []);
-
-  // console.log(blog);
-
-  // const [formData, setFormData] = useState({
-  //   title: "",
-  //   description: "",
-  //   imageLink: "",
-  //   category: "",
-  //   hashtag: "",
-  //   author: "",
-  //   createdAt: new Date().toLocaleDateString("en-us", {
-  //     weekday: "long",
-  //     year: "numeric",
-  //     month: "short",
-  //     day: "numeric",
-  //   }),
-  //   // Add more fields as needed
-  // });
-
-  // //  funtion for state magane data
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     [name]: value,
-  //   }));
-  // };
 
   // post data
   const handleSubmit = async (e) => {

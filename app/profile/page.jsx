@@ -15,7 +15,7 @@ const Profile = () => {
   //   redirect("/login");
   // }
   return (
-    <div className='h-screen '>
+    <div className='h-full '>
       <div className='container px-16 text-center'>
         {/* warper */}
         {user.emailVerified === true ? (

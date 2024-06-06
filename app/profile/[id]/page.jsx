@@ -12,9 +12,7 @@ const BlogUpdate = ({ params }) => {
     blog;
 
   useEffect(() => {
-    fetch(
-      `https://devs-bloger-server-git-main-saadafahmed45s-projects.vercel.app/blog/${id}`
-    )
+    fetch(`https://devs-bloger-server.onrender.com/blog/${id}`)
       .then((res) => res.json())
       .then((data) => setBlog(data));
   }, []);

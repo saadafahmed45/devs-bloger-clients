@@ -4,7 +4,9 @@ import { dynamicBlogApi } from "./dynamicBlogApi";
 
 async function blogApi() {
   const res = await fetch(dynamicBlogApi, {
-    cache: "no-store",
+next:{
+  revalidate:5,
+}
   });
 
   return res.json();

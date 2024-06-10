@@ -66,38 +66,39 @@ const ManageCard = () => {
   };
 
   return (
-    <div className=''>
+    <div className="">
       {/* <h2>hello {userFilter}</h2> */}
 
       {filteredItems.map(
         ({ _id, title, description, imageLink, category, hashtag, author }) => (
           <div
             key={_id}
-            className='border-b-2 border-inherit shadow-lg	shadow-slate-200 m-2  md:m-8  hover:shadow-slate-300  hover:shadow-xl cursor-pointer'>
+            className="border-b-2 border-inherit shadow-lg	shadow-slate-200 m-2  md:m-8  hover:shadow-slate-300  hover:shadow-xl cursor-pointer"
+          >
             {/* card warper */}
-            <div className=' flex justify-between flex-col md:flex-row p-2 items-center '>
+            <div className=" flex justify-between flex-col md:flex-row p-2 items-center ">
               {/* blog content box     */}
-              <div className='w-[100%] md:w-[60%] flex flex-col  order-2 '>
+              <div className="w-[100%] md:w-[60%] flex flex-col  order-2 ">
                 {/* user info */}
 
-                <h2 className='text-lg  font-semibold my-2'>{title}</h2>
-                <p className='text-sm md:text-md'>{description}</p>
+                <h2 className="text-lg  font-semibold my-2">{title}</h2>
+                <p className="text-sm md:text-md">{description}</p>
                 {/* card tagg  */}
-                <div className=' mt-8 md:mt-14 flex justify-between gap-4 flex-col md:flex-row'>
-                  <div className='flex gap-4 text-sm md:text-md p-1'>
-                    <h3 className='bg-orange-100  rounded-lg '>{hashtag} </h3>
+                <div className=" mt-8 md:mt-14 flex justify-between gap-4 flex-col md:flex-row">
+                  <div className="flex gap-4 text-sm md:text-md p-1">
+                    <h3 className="bg-orange-100  rounded-lg ">{hashtag} </h3>
                     <span>10 min read </span>
                   </div>
 
-                  <div className='flex gap-4 justify-between text-3xl  '>
-                    <div className='tooltip' data-tip='Update'>
-                      <Link href={`profile/${_id}`} className=''>
+                  <div className="flex gap-4 justify-between text-3xl  ">
+                    <div className="tooltip" data-tip="Update">
+                      <Link href={`profile/${_id}`} className="">
                         {" "}
                         <FaEdit />{" "}
                       </Link>
                     </div>
 
-                    <div className='tooltip' data-tip='Delete'>
+                    <div className="tooltip" data-tip="Delete">
                       <button onClick={() => handleDelete(_id)}>
                         {" "}
                         <MdDeleteOutline />{" "}
@@ -108,7 +109,7 @@ const ManageCard = () => {
               </div>
 
               {/* blog image     */}
-              <div className='order-1  w-full md:w-1/3 '>
+              <div className="order-1  w-full md:w-1/3 ">
                 <img src={imageLink} alt={imageLink} />
               </div>
             </div>

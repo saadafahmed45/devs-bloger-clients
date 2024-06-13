@@ -51,8 +51,31 @@ export const ContextProvider = ({ children }) => {
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("user")) || []);
   }, []);
+
+
+// manage bookmark 
+const [bookMarks,setBookmarks]=useState([])
+const handleBookMark = (blog)=>{
+
+  setBookmarks((prevBookmarks) => {
+    if (prevBookmarks.some((item) => item._id === blog._id)) {
+      // If blog is already bookmarked, remove it
+      return prevBookmarks.filter((item) => item._id !== blog._id);
+    } else {
+      // Add new bookmark
+      return [...prevBookmarks, blog];
+    }
+    
+  });
+
+}
+
+console.log(bookMarks);
+console.log(bookMarks.length);
+
+
   return (
-    <Context.Provider value={{ googleSingIn, handleSingOut, user }}>
+    <Context.Provider value={{ googleSingIn, handleSingOut, user,handleBookMark ,bookMarks}}>
       {children}
     </Context.Provider>
   );

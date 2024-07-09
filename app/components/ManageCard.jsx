@@ -15,14 +15,16 @@ const ManageCard = () => {
   const [blog, setBlog] = useState([]);
 
   useEffect(() => {
-    fetch(dynamicBlogApi)
+    fetch(
+      `https://devs-bloger-server.onrender.com/blog/?authorEmail=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setBlog(data);
       });
   }, []);
 
-  const filteredItems = blog?.filter((item) => item.authorEmail === user.email);
+  // const filteredItems = blog?.filter((item) => item.authorEmail === user.email);
 
   // console.log(blog);
 
@@ -51,10 +53,10 @@ const ManageCard = () => {
   };
 
   return (
-    <div className="h-screen">
+    <div className=" py-8">
       {/* <h2>hello {userFilter}</h2> */}
       <div>
-        {filteredItems.map(
+        {blog.map(
           ({
             _id,
             title,
